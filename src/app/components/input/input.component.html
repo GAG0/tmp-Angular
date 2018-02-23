@@ -1,0 +1,53 @@
+ <br><br><br><br><br><br><br><br>
+ <div *ngIf="!name; else forminfo">  
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)" style="margin-left:500px; margin-right:500px;">
+       <h4 style="text-align:center;">Input your personal data</h4><br><br><br>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Name</label>
+          <input type="text" class="form-control" formControlName="name" placeholder="Name">
+          <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Mail</label>
+          <input type="email" class="form-control" formControlName="mail" placeholder="e-mail">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="text" class="form-control" formControlName="phone" placeholder="(855)555-1212">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <input type="text" class="form-control" formControlName="description" placeholder="about your offer">
+        <div class="alert" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">You must specify a message that's between 5 and 50 characters.</div>
+      </div>
+      <input type="submit" class="button expanded" value="Submit Form" [disabled]="!rForm.valid">
+</form>
+</div>
+
+
+
+  
+  <ng-template #forminfo>
+    <div class="form-container">
+      <div class="row columns">
+        <div class="col-md-12">
+              <h4>Your Name</h4>
+              <p style="text-align:center;">{{ name }}</p>
+        </div>
+        <div class="col-md-12">
+            <h4>Your Mail</h4>
+            <p style="text-align:center;">{{ mail }}</p>
+      </div>
+      <div class="col-md-12">
+          <h4>Your Phone</h4>
+          <p style="text-align:center;">{{ phone }}</p>
+    </div>
+    <div class="col-md-12">
+        <h4>Your Message</h4>
+        <p style="text-align:center;">{{ description }}</p>
+  </div>
+      </div>
+    </div>
+  </ng-template>

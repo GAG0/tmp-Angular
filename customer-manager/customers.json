@@ -1,0 +1,38 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Smith",
+      "phone": "219-839-2819",
+      "mail": "john@gmail.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Smith",
+      "last_name": "Vill",
+      "phone": "219-254-8967",
+      "mail": "smith@gmail.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Brus",
+      "last_name": "Vilis",
+      "phone": "219-598-4111",
+      "mail": "brus@gmail.com"
+    },
+    {
+      "id": 4,
+      "first_name": "Jason",
+      "last_name": "Statham",
+      "phone": "635-839-8899",
+      "mail": "jason@gmail.com"
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    }
+  ]
+}
