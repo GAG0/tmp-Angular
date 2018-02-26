@@ -1,0 +1,34 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "first_name": "Milan",
+      "last_name": "Milanovic",
+      "email": "milan@gmail.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Petar",
+      "last_name": "Petrovic",
+      "email": "petar@gmail.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Ivan",
+      "last_name": "Ivanovic",
+      "email": "ivan@gmail.com"
+    },
+    {
+      "id": 4,
+      "first_name": "Marko",
+      "last_name": "Markovic",
+      "email": "marko@gmail.com"
+    },
+    {
+      "id": 5,
+      "first_name": "Nikola",
+      "last_name": "Nikolic",
+      "email": "nikola@gmail.com"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { ApiService } from './api.service';
 import { HttpModule } from '@angular/http';
 import { UserServiceService } from './user-service.service';
 import { RouterModule, Routes } from '@angular/router';
@@ -19,7 +20,6 @@ import { NewsComponent } from './components/news/news.component';
 import { TimelineComponent } from './components//timeline/timeline.component';
 import { OurAppComponent } from './components/our-app/our-app.component';
 import { LoginGuard } from './login.guard';
-
 
 
 
