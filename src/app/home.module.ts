@@ -1,4 +1,3 @@
-import { ApiService } from './api.service';
 import { HttpModule } from '@angular/http';
 import { UserServiceService } from './user-service.service';
 import { RouterModule, Routes } from '@angular/router';
@@ -21,6 +20,9 @@ import { TimelineComponent } from './components//timeline/timeline.component';
 import { OurAppComponent } from './components/our-app/our-app.component';
 import { LoginGuard } from './login.guard';
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { EmployeeComponent } from './components/employee/employee.component';
+
 
 
 
@@ -36,6 +38,7 @@ import { LoginGuard } from './login.guard';
     NewsComponent,
     TimelineComponent,
     OurAppComponent,
+    EmployeeComponent,
 
   ],
   imports: [
@@ -50,7 +53,8 @@ import { LoginGuard } from './login.guard';
   ],
 
   providers: [UserServiceService, LoginGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
 

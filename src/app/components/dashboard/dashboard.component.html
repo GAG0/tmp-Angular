@@ -2,7 +2,7 @@
 <h1>
 Profile
 </h1>
-<table class="table-responsive-center">
+<!-- <table class="table-responsive-center">
     <tr>
         <th>ID</th>
         <th>First Name</th>
@@ -20,4 +20,64 @@ Profile
         <td> <button type="button" class="btn btn-success" ng-click="updateEmployee"><span class="glyphicon glyphicon-edit"></span>Edit</button></td>
         <td> <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-delete"></span>Delete</button> </td>
     </tr>
-</table>
+</table> -->
+<router-outlet></router-outlet>
+<a routerLink="employee"> +Add Employee</a>
+
+<br><br>
+  
+
+     <table>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>LastName</th> 
+            <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.first_name}}</td>
+            <td>{{employee.last_name}}</td>
+            <td>{{employee.email}}</td>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                Update
+              </button>
+
+              <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      
+                        <h5>Update Employee</h5>
+                        <form id="formNewEmployee" name="formNewEmployee" #employeeData = "ngForm" (ngSubmit)= "updateEmployee(employeeData.value)">
+                          <label>First Name :</label> <input type="text" name="first_name" id="first_name" placeholder="First Name" ([ngModel])="data.first_name"ngModel><br>
+                          <label>Last Name :</label> <input type="text" name="last_name" id="last_name" placeholder="Last Name" ([ngModel])="data.last_name" ngModel><br>
+                          <label>E-mail :</label> <input type="text" name="email" id="email" placeholder="E-mail" ([ngModel])="data.email" ngModel><br>
+                        </form>
+                        
+                        <br>  
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" (click)=" updateEmployee(employee.id)">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           
+            <!-- <td> <button type="button" class="btn btn-success" (click)=" updateEmployee(employee.id)"><span class="glyphicon glyphicon-edit"></span>Edit</button></td> -->
+            <td> <button type="button" class="btn btn-danger"  (click)="deleteEmployee(employee.id)"><span class="glyphicon glyphicon-delete"></span>Delete</button> </td>
+           
+        </tr>
+        
+    </table> 
+    

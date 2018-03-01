@@ -1,3 +1,4 @@
+import { EmployeeComponent } from './components/employee/employee.component';
 import { FormsModule } from '@angular/forms';
 import { LoginGuard } from './login.guard';
 import { OurAppComponent } from './components/our-app/our-app.component';
@@ -23,7 +24,10 @@ const routes: Routes = [
         { path : '' , redirectTo: 'login', pathMatch: 'full'},
         { path: 'login', component: LoginComponent},
         { path: 'about', component: OurAppComponent, canActivate: [LoginGuard]},
-        { path: 'dashboard', component: DashboardComponent, canActivate: [LoginGuard]},
+        { path: 'dashboard', component: DashboardComponent, canActivate: [LoginGuard],
+                children: [
+                        {path: 'employee', component: EmployeeComponent},
+                ]},
         { path: 'news', component: NewsComponent, canActivate: [LoginGuard]},
         { path: 'timeline', component: TimelineComponent, canActivate: [LoginGuard]},
       ]},
